@@ -58,7 +58,7 @@ public enum FileKitInfo {
 
 import Foundation
 
-public struct FileKit {
+public struct FileKitS {
 
     /// Shared json decoder instance
     public static var jsonDecoder = JSONDecoder()
@@ -71,7 +71,7 @@ public struct FileKit {
 
 }
 
-extension FileKit {
+extension FileKitS {
 
     /// Write an `Encodable` object to path
     ///
@@ -79,7 +79,7 @@ extension FileKit {
     /// - Parameter path: The destination path for write operation.
     /// - Parameter encoder: A specific JSON encoder (default: FileKit.jsonEncoder).
     ///
-    public static func write<T: Encodable>(_ codable: T, to path: Path, with encoder: JSONEncoder = FileKit.jsonEncoder) throws {
+    public static func write<T: Encodable>(_ codable: T, to path: Path, with encoder: JSONEncoder = FileKitS.jsonEncoder) throws {
         do {
             let data = try encoder.encode(codable)
             try DataFile(path: path).write(data)
@@ -95,7 +95,7 @@ extension FileKit {
     /// - Parameter path: The destination path for write operation.
     /// - Parameter decoder: A specific JSON decoder (default: FileKit.jsonDecoder).
     ///
-    public static func read<T: Decodable>(from path: Path, with decoder: JSONDecoder = FileKit.jsonDecoder) throws -> T {
+    public static func read<T: Decodable>(from path: Path, with decoder: JSONDecoder = FileKitS.jsonDecoder) throws -> T {
         let data = try DataFile(path: path).read()
         do {
             return try decoder.decode(T.self, from: data)

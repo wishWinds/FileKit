@@ -879,8 +879,8 @@ class FileKitTests: XCTestCase {
         let path: Path = .userTemporary + "testcodable.plist"
 
         do {
-            try FileKit.write(encodable, to: path)
-            let decodable: TestCodable = try FileKit.read(from: path)
+            try FileKitS.write(encodable, to: path)
+            let decodable: TestCodable = try FileKitS.read(from: path)
             XCTAssertEqual(decodable, encodable)
         } catch {
             XCTFail(String(describing: error))
@@ -892,8 +892,8 @@ class FileKitTests: XCTestCase {
         let path: Path = .userTemporary + "testcodablearray.plist"
 
         do {
-            try FileKit.write(encodable, to: path)
-            let decodable: [TestCodable] = try FileKit.read(from: path)
+            try FileKitS.write(encodable, to: path)
+            let decodable: [TestCodable] = try FileKitS.read(from: path)
             XCTAssertEqual(decodable, encodable)
         } catch {
             XCTFail(String(describing: error))

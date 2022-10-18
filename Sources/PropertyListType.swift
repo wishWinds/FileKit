@@ -19,7 +19,7 @@ public protocol PropertyListReadable: Readable, Decodable {
 extension PropertyListReadable {
     // default implementation return the shared one
     public static var propertyListDecoder: PropertyListDecoder {
-        return FileKit.propertyListDecoder
+        return FileKitS.propertyListDecoder
     }
 }
 // Implement Readable
@@ -46,7 +46,7 @@ public protocol PropertyListWritable: Writable, Encodable {
 extension PropertyListWritable {
     // default implementation return the shared one
     public var propertyListEncoder: PropertyListEncoder {
-        return FileKit.propertyListEncoder
+        return FileKitS.propertyListEncoder
     }
 }
 // Implement Writable

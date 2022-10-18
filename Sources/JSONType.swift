@@ -19,7 +19,7 @@ public protocol JSONReadable: Readable, Decodable {
 extension JSONReadable {
     // default implementation return the shared one
     public static var jsonDecoder: JSONDecoder {
-        return FileKit.jsonDecoder
+        return FileKitS.jsonDecoder
     }
 }
 // Implement Readable
@@ -46,7 +46,7 @@ public protocol JSONWritable: Writable, Encodable {
 extension JSONWritable {
     // default implementation return the shared one
     public var jsonEncoder: JSONEncoder {
-        return FileKit.jsonEncoder
+        return FileKitS.jsonEncoder
     }
 }
 // Implement Writable
